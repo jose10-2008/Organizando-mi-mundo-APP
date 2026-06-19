@@ -80,11 +80,7 @@ python -m pytest -q
 
 ---
 
-## 💡 Nota
-
-Los archivos temporales y generados como `.pytest_cache`, `tareas.csv` y `parcial.csv` se eliminaron para mantener el repositorio limpio y enfocado en el programa.
-
-## Evidencias 
+## 💡Evidencias 
 ![alt text](<Captura de pantalla 2026-06-18 152729.png>)
 
 ![alt text](<Captura de pantalla 2026-06-18 152746.png>)
