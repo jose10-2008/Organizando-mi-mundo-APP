@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 from organizando_mi_mundo.models.task import Task
 
@@ -12,9 +13,9 @@ class TaskManager:
     def __init__(self):
         self._tasks: List[Task] = []
 
-    def add_task(self, title: str, description: str) -> Task:
+    def add_task(self, title: str, description: str, due_datetime: datetime, has_time: bool = True) -> Task:
         """Crea una nueva `Task`, la agrega a la lista y la devuelve."""
-        task = Task(title, description)
+        task = Task(title, description, due_datetime, has_time)
         self._tasks.append(task)
         return task
 

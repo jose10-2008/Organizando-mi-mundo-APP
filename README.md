@@ -2,141 +2,84 @@
 
 ## Integrante
 
-* 👨‍💻 José Rodríguez Escobar
+- 👨‍💻 José Rodríguez Escobar
 
 ---
 
-## 📖 Descripción del Proyecto
+## 📌 Descripción
 
-**Organizando Mi Mundo** es una aplicación de consola desarrollada en **Python 🐍** para ayudar a los estudiantes a gestionar sus tareas académicas y personales.
-
-La aplicación ofrece una experiencia rápida y clara en la terminal, con funciones para:
-
-- ✅ Crear tareas.
-- 📋 Listar todas las tareas.
-- ✔️ Marcar tareas como completadas.
-- 📄 Exportar tareas a un archivo CSV.
-
-El proyecto está diseñado con **Programación Orientada a Objetos (POO)** y la arquitectura **MVC (Modelo - Vista - Controlador)** para mantener la lógica separada, el código legible y fácil de mantener.
+**Organizando Mi Mundo** es una aplicación de tareas con interfaz gráfica en **Python**. Permite crear, ver, completar y exportar tareas desde una ventana moderna.
 
 ---
 
-## 🚀 Resumen
-
-Esta solución permite organizar el trabajo diario de forma simple y eficiente desde la terminal, con una estructura enfocada en:
-
-- Modularidad.
-- Reutilización de código.
-- Pruebas unitarias.
-- Interfaz más agradable con `rich`.
-
----
-
-## 🧩 Características principales
+## ⭐ Qué hace la app
 
 - Crear tareas con título y descripción.
-- Ver el estado de cada tarea.
-- Completar tareas y actualizar su estado.
-- Exportar el listado completo a un archivo CSV.
-- Validación de entradas para evitar datos erróneos.
+- Ver todas las tareas en una lista.
+- Marcar tareas como completadas.
+- Exportar tareas a CSV.
+- Recibir notificaciones de escritorio al crear o completar tareas.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🧩 Tecnologías usadas
 
-| Tecnología      | Uso                        |
-| --------------- | -------------------------- |
-| 🐍 Python       | Lenguaje principal         |
-| 🎨 Rich         | Interfaz visual en consola |
-| 📊 Pandas       | Exportación de datos a CSV |
-| 🧪 Pytest       | Pruebas unitarias          |
-| 🌐 Git y GitHub | Control de versiones       |
+- `customtkinter` — Interfaz gráfica moderna.
+- `plyer` — Notificaciones de escritorio.
+- `pandas` — Exportación a CSV.
+- `pytest` — Pruebas unitarias.
 
 ---
 
-## 🏛️ Arquitectura del proyecto
+## 🏗️ Estructura del proyecto
 
-El proyecto sigue el patrón **MVC**:
-
-- **Modelo:** maneja datos y reglas de negocio (`Task`, `TaskManager`).
-- **Vista:** presenta la información en consola (`TaskView`).
-- **Controlador:** dirige las acciones del usuario y enlaza modelo y vista (`TaskController`).
-
----
-
-## 📁 Estructura del proyecto
-
-- `src/organizando_mi_mundo/main.py` — Punto de entrada de la aplicación.
-- `src/organizando_mi_mundo/controllers/task_controller.py` — Lógica de flujo y comandos.
-- `src/organizando_mi_mundo/models/task.py` — Definición del modelo de tarea.
-- `src/organizando_mi_mundo/models/task_manager.py` — Gestión de la colección de tareas.
-- `src/organizando_mi_mundo/views/task_view.py` — Presentación en consola.
-- `tests/` — Pruebas unitarias con Pytest.
+- `src/organizando_mi_mundo/main.py` — Punto de entrada.
+- `src/organizando_mi_mundo/controllers/task_controller.py` — Lógica de la aplicación.
+- `src/organizando_mi_mundo/models/task.py` — Modelo de tarea.
+- `src/organizando_mi_mundo/models/task_manager.py` — Gestión de tareas.
+- `src/organizando_mi_mundo/views/task_view.py` — Interfaz gráfica.
+- `tests/` — Pruebas unitarias.
 
 ---
 
-## ⚙️ Instalación y ejecución
+## ⚙️ Instalación
 
-1. Clona el repositorio.
-2. Abre una terminal en la carpeta del proyecto.
-3. Instala dependencias:
+1. Abre una terminal en la carpeta del proyecto raíz.
+2. Instala las dependencias usando el intérprete Python del entorno virtual:
 
-```bash
-pip install -r requirements.txt
+```powershell
+python -m pip install -r requirements.txt
 ```
 
-4. Ejecuta la aplicación:
+> Si el wrapper `pip` no funciona, usa siempre `python -m pip`.
 
-```bash
+---
+
+## ▶️ Ejecución
+
+Opción 1: desde la carpeta raíz del repositorio:
+
+```powershell
+python run.py
+```
+
+Opción 2: desde la carpeta `organizando-mi-mundo`:
+
+```powershell
+cd organizando-mi-mundo
 python src/organizando_mi_mundo/main.py
 ```
 
 ---
 
-## 🧪 Pruebas
+## 🧪 Ejecutar pruebas
 
-Para ejecutar las pruebas unitarias usa:
-
-```bash
-pytest
+```powershell
+python -m pytest -q
 ```
 
-Se incluyen pruebas para:
-
-- Creación y validación de tareas.
-- Completar tareas.
-- Listado y almacenamiento de tareas.
-
 ---
 
-## 📸 Evidencias del proyecto
+## 💡 Nota
 
-Las capturas del flujo de uso se encuentran en `organizando-mi-mundo/docs/screenshots/`.
-
-![Prueba 1](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/1era_prueba.png)
-
-![Prueba 2](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/2da_prueba.png)
-
-![Prueba 3](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/3er_prueba.png)
-
-![Prueba 4](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/4ta_prueba.png)
-
-![Prueba 4 - parte 2](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/4ta_prueba_parte2.png)
-
-![Cierre del programa](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/5ta_prueba_final.png)
-
----
-
-## 🏆 Conclusión
-
-El proyecto demuestra una implementación sólida de una aplicación de tareas con **POO**, **MVC** y pruebas unitarias. Además, mejora la presentación en consola y permite exportar los resultados a CSV.
-
----
-
-## 📌 Nota final
-
-Este repositorio está preparado para ser evaluado como entrega final, con documentación clara, pruebas y un flujo de trabajo completo.
-
----
-
-# 🚀 ¡Gracias por usar Organizando Mi Mundo! 🌍📚✨
+Los archivos temporales y generados como `.pytest_cache`, `tareas.csv` y `parcial.csv` se eliminaron para mantener el repositorio limpio y enfocado en el programa.

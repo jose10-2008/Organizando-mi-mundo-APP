@@ -1,4 +1,6 @@
 # Librerías externas requeridas
-rich
+customtkinter
+plyer
 pandas
+pyttsx3
 pytest

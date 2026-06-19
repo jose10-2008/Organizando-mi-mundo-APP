@@ -1,7 +1,7 @@
 """Punto de entrada ejecutable para la aplicación "Organizando Mi Mundo".
 
-Este módulo se encarga de inicializar el `TaskController` y arrancar el
-bucle principal de la aplicación de consola.
+Este módulo inicializa el `TaskController` y arranca el bucle principal de
+la aplicación gráfica.
 
 Ejecución:
 
@@ -24,11 +24,7 @@ from organizando_mi_mundo.controllers.task_controller import TaskController
 
 
 def main() -> None:
-    """Inicia la aplicación creando el controlador principal.
-
-    La función no devuelve valores; lanza el bucle interactivo que gestiona
-    la entrada del usuario hasta que éste seleccione salir.
-    """
+    """Inicia la aplicación creando el controlador principal."""
     controller = TaskController()
     controller.run()
 

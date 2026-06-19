@@ -1,142 +1,101 @@
-# 🌍 ORGANIZANDO MI MUNDO 📚✅
+# 🌍 Organizando Mi Mundo 📚✅
 
-## Integrante
+## ¿Qué hace este programa?
 
-* 👨‍💻 José Rodríguez Escobar
+Organizando Mi Mundo es una aplicación de escritorio creada con Python para gestionar tareas escolares y personales.
 
----
+La aplicación permite:
 
-## 📖 Descripción del Proyecto
-
-**Organizando Mi Mundo** es una aplicación de consola desarrollada en **Python 🐍** para ayudar a los estudiantes a gestionar sus tareas académicas y personales.
-
-La aplicación ofrece una experiencia rápida y clara en la terminal, con funciones para:
-
-- ✅ Crear tareas.
-- 📋 Listar todas las tareas.
-- ✔️ Marcar tareas como completadas.
-- 📄 Exportar tareas a un archivo CSV.
-
-El proyecto está diseñado con **Programación Orientada a Objetos (POO)** y la arquitectura **MVC (Modelo - Vista - Controlador)** para mantener la lógica separada, el código legible y fácil de mantener.
+- Crear tareas con título.
+- Registrar una fecha de vencimiento obligatoria.
+- Añadir una hora opcional.
+- Marcar tareas como completadas.
+- Exportar las tareas a un archivo CSV.
+- Enviar notificaciones de escritorio cuando llegue el día de vencimiento.
+- Reproducir avisos hablados con voz.
 
 ---
 
-## 🚀 Resumen
+## Con qué se hizo
 
-Esta solución permite organizar el trabajo diario de forma simple y eficiente desde la terminal, con una estructura enfocada en:
+La aplicación se desarrolló usando el patrón **MVC** (Modelo-Vista-Controlador). Esto permite separar la lógica del programa, la interfaz de usuario y la gestión de datos.
 
-- Modularidad.
-- Reutilización de código.
-- Pruebas unitarias.
-- Interfaz más agradable con `rich`.
+### Funciones y módulos principales
 
----
-
-## 🧩 Características principales
-
-- Crear tareas con título y descripción.
-- Ver el estado de cada tarea.
-- Completar tareas y actualizar su estado.
-- Exportar el listado completo a un archivo CSV.
-- Validación de entradas para evitar datos erróneos.
+- `Task`: representa una tarea individual, con título, descripción, fecha y hora.
+- `TaskManager`: administra la lista de tareas y permite agregarlas, listarlas y completarlas.
+- `TaskView`: construye la interfaz gráfica con `customtkinter`.
+- `TaskController`: valida datos, controla el flujo de la aplicación y mantiene sincronizada la vista y el modelo.
+- `parse_due_datetime`: valida la fecha obligatoria y la hora opcional.
+- `check_due_tasks`: revisa periódicamente si alguna tarea alcanzó su fecha de vencimiento y dispara notificaciones.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías usadas
 
-| Tecnología      | Uso                        |
-| --------------- | -------------------------- |
-| 🐍 Python       | Lenguaje principal         |
-| 🎨 Rich         | Interfaz visual en consola |
-| 📊 Pandas       | Exportación de datos a CSV |
-| 🧪 Pytest       | Pruebas unitarias          |
-| 🌐 Git y GitHub | Control de versiones       |
+- `customtkinter`: para crear la interfaz gráfica.
+- `plyer`: para mostrar notificaciones de escritorio.
+- `pyttsx3`: para avisos hablados.
+- `pandas`: para exportar tareas a CSV.
+- `pytest`: para pruebas unitarias.
 
 ---
 
-## 🏛️ Arquitectura del proyecto
+## Cómo se usa
 
-El proyecto sigue el patrón **MVC**:
-
-- **Modelo:** maneja datos y reglas de negocio (`Task`, `TaskManager`).
-- **Vista:** presenta la información en consola (`TaskView`).
-- **Controlador:** dirige las acciones del usuario y enlaza modelo y vista (`TaskController`).
-
----
-
-## 📁 Estructura del proyecto
-
-- `src/organizando_mi_mundo/main.py` — Punto de entrada de la aplicación.
-- `src/organizando_mi_mundo/controllers/task_controller.py` — Lógica de flujo y comandos.
-- `src/organizando_mi_mundo/models/task.py` — Definición del modelo de tarea.
-- `src/organizando_mi_mundo/models/task_manager.py` — Gestión de la colección de tareas.
-- `src/organizando_mi_mundo/views/task_view.py` — Presentación en consola.
-- `tests/` — Pruebas unitarias con Pytest.
+1. Ejecuta la aplicación con `python src/organizando_mi_mundo/main.py`.
+2. Escribe el título de la tarea.
+3. Ingresa la fecha en formato `dd/mm/aaaa`.
+4. Opcionalmente, escribe la hora en formato `HH:MM`.
+5. Presiona "Agregar tarea".
+6. Selecciona una tarea y presiona "Marcar completada".
+7. Presiona "Exportar a CSV" para guardar las tareas.
 
 ---
 
-## ⚙️ Instalación y ejecución
+## Por qué cumple los requisitos
 
-1. Clona el repositorio.
-2. Abre una terminal en la carpeta del proyecto.
-3. Instala dependencias:
+- Tiene interfaz gráfica, tal como pide el profesor.
+- Usa librerías externas (`customtkinter`, `plyer`, `pyttsx3`, `pandas`).
+- Permite fecha obligatoria y hora opcional.
+- Envía notificaciones cuando entra el día de vencimiento.
+- Está organizado con MVC.
+- Incluye pruebas unitarias.
+
+---
+
+## Ejecución y pruebas
+
+Instalación de dependencias:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Ejecuta la aplicación:
+Ejecución:
 
 ```bash
 python src/organizando_mi_mundo/main.py
 ```
 
----
-
-## 🧪 Pruebas
-
-Para ejecutar las pruebas unitarias usa:
+Pruebas:
 
 ```bash
-pytest
+python -m pytest -q
 ```
 
-Se incluyen pruebas para:
+---
 
-- Creación y validación de tareas.
-- Completar tareas.
-- Listado y almacenamiento de tareas.
+## Archivos clave
+
+- `src/organizando_mi_mundo/main.py`: inicia la aplicación.
+- `src/organizando_mi_mundo/controllers/task_controller.py`: control de la aplicación.
+- `src/organizando_mi_mundo/models/task.py`: modelo de tarea.
+- `src/organizando_mi_mundo/models/task_manager.py`: gestor de tareas.
+- `src/organizando_mi_mundo/views/task_view.py`: interfaz gráfica.
 
 ---
 
-## 📸 Evidencias del proyecto
+## Nota final
 
-Las capturas del flujo de uso se encuentran en `organizando-mi-mundo/docs/screenshots/`.
-
-![Prueba 1](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/1era_prueba.png)
-
-![Prueba 2](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/2da_prueba.png)
-
-![Prueba 3](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/3er_prueba.png)
-
-![Prueba 4](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/4ta_prueba.png)
-
-![Prueba 4 - parte 2](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/4ta_prueba_parte2.png)
-
-![Cierre del programa](https://github.com/jose10-2008/Organizando-mi-mundo-1/raw/main/organizando-mi-mundo/docs/screenshots/5ta_prueba_final.png)
-
----
-
-## 🏆 Conclusión
-
-El proyecto demuestra una implementación sólida de una aplicación de tareas con **POO**, **MVC** y pruebas unitarias. Además, mejora la presentación en consola y permite exportar los resultados a CSV.
-
----
-
-## 📌 Nota final
-
-Este repositorio está preparado para ser evaluado como entrega final, con documentación clara, pruebas y un flujo de trabajo completo.
-
----
-
-# 🚀 ¡Gracias por usar Organizando Mi Mundo! 🌍📚✨
+Esta aplicación está lista para entregar como trabajo final con interfaz gráfica, manejo de fechas, notificaciones y voz.

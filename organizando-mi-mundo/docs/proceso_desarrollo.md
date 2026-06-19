@@ -4,7 +4,7 @@ Este documento describe el proceso completo de desarrollo del proyecto "Organiza
 
 ## 1. Planificación
 
-El objetivo fue crear una aplicación de consola en Python que permitiera crear, listar y completar tareas. También se definió la necesidad de exportar datos a CSV y de estructurar el proyecto con MVC y POO.
+El objetivo fue crear una aplicación en Python que permitiera crear, listar y completar tareas con una interfaz gráfica moderna. También se definió la necesidad de exportar datos a CSV y de estructurar el proyecto con MVC y POO.
 
 ## 2. Diseño del sistema
 
@@ -14,7 +14,7 @@ Se definieron los componentes principales:
 - `TaskController` en `controllers/task_controller.py` para manejar la lógica.
 - `main.py` como punto de entrada.
 
-Se decidió usar `rich` para la salida en la consola y `pandas` para la exportación a CSV.
+Se decidió usar `customtkinter` para la interfaz gráfica, `plyer` para notificaciones de escritorio y `pandas` para la exportación a CSV.
 
 ## 3. Desarrollo
 
@@ -29,11 +29,14 @@ La clase incluye validación del título y un método para marcar la tarea como 
 
 ### 3.2 Vista (Visualización)
 
-`TaskView` utiliza `rich` para:
-- mostrar menús en un panel con colores.
-- mostrar tablas de tareas.
-- mostrar mensajes atractivos.
-- solicitar datos al usuario.
+`TaskView` utiliza `customtkinter` para:
+- mostrar una ventana gráfica moderna.
+- agregar tareas mediante campos de entrada.
+- seleccionar y completar tareas desde una lista.
+- exportar tareas a CSV mediante un diálogo de guardado.
+- mostrar ventanas informativas y advertencias.
+
+También utiliza `plyer` para enviar notificaciones de escritorio cuando se crea, completa o exporta una tarea.
 
 ### 3.3 Controlador (Lógica)
 
@@ -65,7 +68,7 @@ Se incluyó esta documentación y un diagrama de clases en Mermaid en `docs/diag
 Se recomienda usar Git con commits claros como:
 - `git commit -m "Inicializa proyecto con estructura MVC"`
 - `git commit -m "Agrega exportación a CSV con pandas"`
-- `git commit -m "Integra Rich para la consola"`
+- `git commit -m "Integra CustomTkinter para interfaz gráfica"`
 - `git commit -m "Agrega pruebas unitarias con pytest"`
 
 ## 7. Resultados
